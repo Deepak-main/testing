@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Studio - Contact Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="visual-bg">
+        <div class="grain"></div>
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <nav class="full-nav">
+        <div class="nav-content">
+            <div class="logo">VIDEO<span>STUDIO</span></div>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links" id="nav-list">
+                <li><a href="index.html" class="nav-item">Home</a></li>
+                <li><a href="product.html" class="nav-item">Product</a></li>
+                <li><a href="courses.html" class="nav-item">Courses</a></li>
+                <li><a href="contact.html" class="nav-item active">Contact Us</a></li>
+                <li><a href="about.html" class="nav-item">About</a></li>
+                <li class="mobile-only"><a href="about.html" class="btn-neon">Learn More</a></li>
+            </ul>
+
+            <div class="nav-cta hide-mobile">
+                <a href="about.html" class="btn-neon">Learn More</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="content container">
+        <header class="page-header">
+            <span class="badge">Get In Touch</span>
+            <h1>Let's <span class="outline">Connect</span></h1>
+            <p>Ready to start your next masterpiece? Drop us a message below.</p>
+        </header>
+
+        <div class="form-wrapper">
+            <form action="#" method="post" class="contact-form">
+                <div class="input-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Tell us about your project" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 VideoStudio. All rights reserved.</p>
+    </footer>
+
+    <style>
+        :root {
+            --primary: #00f2ff;
+            --secondary: #7000ff;
+            --bg: #020202;
+            --card-glass: rgba(255, 255, 255, 0.03);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: #fff;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* --- BACKGROUND --- */
+        .visual-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1; background: radial-gradient(circle at 50% 50%, #0a0a0a, #000);
+        }
+
+        .grain {
+            position: absolute; width: 100%; height: 100%;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/76/1k_pnt.png');
+            opacity: 0.03; pointer-events: none;
+        }
+
+        .orb {
+            position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.3;
+            animation: drift 20s infinite alternate ease-in-out;
+        }
+
+        .orb-1 { width: clamp(250px, 40vw, 500px); height: clamp(250px, 40vw, 500px); background: var(--secondary); top: -100px; left: -100px; }
+        .orb-2 { width: clamp(200px, 30vw, 400px); height: clamp(200px, 30vw, 400px); background: var(--primary); bottom: -100px; right: -100px; animation-delay: -5s; }
+        .orb-3 { width: 200px; height: 200px; background: #ff0055; top: 40%; left: 30%; opacity: 0.1; }
+
+        @keyframes drift {
+            from { transform: translate(0, 0); }
+            to { transform: translate(40px, 60px); }
+        }
+
+        /* --- NAVIGATION --- */
+        .full-nav {
+            position: fixed; width: 100%; z-index: 1000;
+            background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-content {
+            max-width: 1400px; margin: 0 auto;
+            padding: 15px 5%; display: flex; justify-content: space-between; align-items: center;
+        }
+
+        .logo { font-size: clamp(1.2rem, 4vw, 1.8rem); font-weight: 900; letter-spacing: 2px; }
+        .logo span { color: var(--primary); text-shadow: 0 0 20px var(--primary); }
+
+        .nav-links { display: flex; list-style: none; gap: 40px; align-items: center; }
+        .nav-item {
+            text-decoration: none; color: #888; font-size: 0.8rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 2px; transition: 0.4s; position: relative;
+        }
+
+        .nav-item:hover, .nav-item.active { color: #fff; }
+        .nav-item.active { color: var(--primary); }
+
+        .btn-neon {
+            text-decoration: none; color: var(--primary); border: 1px solid var(--primary);
+            padding: 10px 25px; border-radius: 5px; font-size: 0.75rem; font-weight: 900;
+            text-transform: uppercase; transition: 0.3s;
+        }
+
+        .btn-neon:hover { background: var(--primary); color: #000; box-shadow: 0 0 30px var(--primary); }
+
+        /* --- FORM SECTION --- */
+        .container { max-width: 800px; margin: auto; padding: 0 5%; }
+        .content { padding: clamp(100px, 15vh, 160px) 0 60px; text-align: center; }
+
+        .page-header h1 { font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 900; margin: 20px 0; line-height: 1.1; }
+        .outline { color: transparent; -webkit-text-stroke: 1.5px #fff; }
+        
+        .badge { 
+            background: rgba(255,255,255,0.05); padding: 5px 15px; border-radius: 4px; 
+            font-size: 0.7rem; color: var(--primary); border: 1px solid var(--primary);
+            text-transform: uppercase; letter-spacing: 1px;
+        }
+
+        .page-header p { color: #888; font-size: clamp(1rem, 2.5vw, 1.2rem); margin-bottom: 40px; }
+
+        /* --- MODERN FORM DESIGN --- */
+        .form-wrapper {
+            background: var(--card-glass);
+            padding: clamp(30px, 5vw, 60px);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(25px);
+            animation: fadeInUp 0.8s forwards;
+            text-align: left;
+        }
+
+        .input-group { margin-bottom: 25px; }
+
+        .input-group label {
+            display: block; color: #fff; font-size: 0.75rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;
+        }
+
+        .input-group input, .input-group textarea {
+            width: 100%; padding: 15px; background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px;
+            color: #fff; font-family: inherit; font-size: 1rem; transition: all 0.3s;
+        }
+
+        .input-group input:focus, .input-group textarea:focus {
+            outline: none; border-color: var(--primary); background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+        }
+
+        .submit-btn {
+            width: 100%; padding: 18px; background: #fff; color: #000;
+            border: none; border-radius: 10px; font-weight: 800; font-size: 1rem;
+            text-transform: uppercase; cursor: pointer; transition: 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: scale(1.02); background: var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 242, 255, 0.3);
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        footer { text-align: center; padding: 60px 20px; color: #333; font-size: 0.8rem; }
+
+        /* --- MOBILE NAV LOGIC --- */
+        .menu-toggle { display: none; flex-direction: column; gap: 6px; cursor: pointer; }
+        .menu-toggle span { width: 30px; height: 2px; background: #fff; transition: 0.3s; }
+        .mobile-only { display: none; }
+
+        @media (max-width: 992px) {
+            .nav-links { gap: 20px; }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle { display: flex; z-index: 1001; }
+            .hide-mobile { display: none; }
+            
+            .nav-links {
+                position: fixed; top: 0; right: -100%; width: 80%; height: 100vh;
+                background: rgba(5, 5, 5, 0.98); backdrop-filter: blur(20px);
+                flex-direction: column; justify-content: center; align-items: center;
+                transition: 0.5s ease; gap: 30px;
+            }
+            .nav-links.active { right: 0; }
+            .mobile-only { display: block; margin-top: 20px; }
+
+            /* Burger Animation */
+            .menu-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(8px, 8px); }
+            .menu-toggle.open span:nth-child(2) { opacity: 0; }
+            .menu-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+        }
+    </style>
+
+    <script>
+        // Mobile Navigation Toggle
+        const menuToggle = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-list');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('open');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.classList.remove('open');
+            });
+        });
+    </script>
+
+</body>
+</html>
